@@ -7,7 +7,7 @@ public class Task1 {
     public static void main(String[] args) {
         int[] arr = init_array();
         System.out.println(Arrays.toString(arr) + " Cтарт");
-        split_arr(arr);
+        split_merge_arrs(arr);
         System.out.println(Arrays.toString(arr) + " Финиш");
     }
 
@@ -19,7 +19,7 @@ public class Task1 {
         return array;
     }
 
-    public static void split_arr(int[] arr) {
+    public static void split_merge_arrs(int[] arr) {
         if (arr.length == 1) return;        //Выход из рекурсии
         int mid = arr.length / 2;           //Делим массив на два
         int[] arr_l = new int[mid];
@@ -30,8 +30,8 @@ public class Task1 {
         for (int i = mid; i < arr.length; i++)
             arr_r[i - mid] = arr[i];
 
-        split_arr(arr_l); //Рекурсия деления массивов
-        split_arr(arr_r);
+        split_merge_arrs(arr_l); //Рекурсия деления массивов
+        split_merge_arrs(arr_r);
         merge_arrs(arr, arr_l, arr_r); // Слияние массивов
     }
 
