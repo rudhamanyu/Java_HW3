@@ -1,7 +1,6 @@
 //1.Реализовать алгоритм сортировки слиянием
 
 import java.util.Arrays;
-import java.util.List;
 import java.util.Random;
 
 public class Task1 {
@@ -44,11 +43,9 @@ public class Task1 {
             if (arr_l[i] < arr_r[j]) {
                 arr[k] = arr_l[i];
                 i++;
-//                System.out.println(Arrays.toString(arr) + " l");
             } else {
                 arr[k] = arr_r[j];
                 j++;
-//                System.out.println(Arrays.toString(arr) + " r");
             }
             k++;
         }
